@@ -110,13 +110,19 @@ h2 {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s;
     color: #fff;
+    width: 95px;
+    height: 80px; 
 }
 
 .skill i {
-    font-size: 40px;
+    font-size: 40px; 
     margin-bottom: 10px;
     color: #76ff03;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
 
 .skill h4 {
     margin-top: 10px;
@@ -220,7 +226,6 @@ h2 {
     white-space: pre-wrap; 
 }
 
-/* Ajustes Gerais */
 section {
   padding: 100px 20px;
   max-width: 1200px;
@@ -241,9 +246,17 @@ h2 {
 
 .projects-experiences-section .card-container {
     display: flex;
-    flex-wrap: wrap; /* Permite que os cartões se movam para a próxima linha */
-    gap: 20px; /* Espaçamento entre os cartões */
-    justify-content: center; /* Centraliza os cartões */
+    flex-wrap: wrap;
+    gap: 20px; 
+    justify-content: center; 
+}
+.slick-dots li button:before {
+    color: #00e676 !important;
+    font-size: 12px; 
+}
+
+.slick-dots li.slick-active button:before {
+    color: #00e676 !important;
 }
 
 .item-card {
@@ -279,4 +292,97 @@ h2 {
 
 .item-card:hover {
     background-color: #333;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+
+  h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  section {
+    padding: 50px 10px;
+  }
+
+  .hero-section {
+    padding: 100px 20px;
+  }
+
+  .hero-section h1 {
+    font-size: 32px;
+  }
+
+  .hero-section p {
+    font-size: 18px;
+  }
+
+  .skills-container {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+  }
+
+  .skill {
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+  }
+
+  .projects-experiences-section .card-container {
+    flex-direction: column; 
+    align-items: center;
+  }
+
+  .item-card {
+    width: 100%; 
+    min-height: 180px;
+  }
+
+  .navbar {
+    flex-direction: column;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .contact-section form {
+    padding: 20px;
+  }
+
+  .contact-section button {
+    padding: 10px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section h1 {
+    font-size: 24px;
+  }
+
+  .hero-section p {
+    font-size: 16px;
+  }
+
+  .skill i {
+    font-size: 30px;
+  }
+
+  .skill h4 {
+    font-size: 14px;
+  }
+
+  .projects-experiences-section .card-container {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .item-card {
+    width: 100%;
+  }
 }
