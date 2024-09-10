@@ -37,10 +37,9 @@ const Hero = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 1.5, duration: 1 }}
-                    className="hero-buttons"
+                    className="hero-buttons-box" // Adicione esta classe
                 >
                     <a href="#projects" className="btn btn-primary">Veja Meus Projetos</a>
-                    <br></br>
                     <a href="#contact" className="btn btn-secondary">Entre em Contato</a>
                 </motion.div>
             </motion.div>
