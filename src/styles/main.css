@@ -239,10 +239,11 @@ h2 {
     background-color: #1f1f1f;
 }
 
-.projects-experiences-section h2 {
-    color: #00e676;
-    font-size: 36px;
-    margin-bottom: 40px;
+.projects-experiences-section .card-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os cartões se movam para a próxima linha */
+    gap: 20px; /* Espaçamento entre os cartões */
+    justify-content: center; /* Centraliza os cartões */
 }
 
 .item-card {
@@ -252,21 +253,28 @@ h2 {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s;
     color: #fff;
-    text-align: left;
-    height: 200px; /* Ajuste conforme necessário */
+    text-align: center;
+    min-height: 200px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    overflow: hidden;
+    width: 300px; 
+    margin: 10px; 
+    box-sizing: border-box; 
 }
 
 .item-card h4 {
     margin-bottom: 10px;
-    font-size: 20px;
+    font-size: 16px;
     color: #76ff03;
 }
 
 .item-card p {
-    font-size: 16px;
+    font-size: 14px;
+    margin: 10px 0; 
+    overflow: auto;
+    flex-grow: 1; 
 }
 
 .item-card:hover {
