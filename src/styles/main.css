@@ -92,7 +92,7 @@ h2 {
 }
 
 .hero-buttons-box a {
-    margin: 10px 15px; 
+    margin: 10px 5px !important; 
     color: #fff;
 }
 
