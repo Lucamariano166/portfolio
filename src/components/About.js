@@ -11,7 +11,7 @@ const About = () => {
             >
                 <h2>Sobre Mim</h2>
                 <p>
-                    Sou Desenvolvedor FullStack com sólida experiência em PHP, JavaScript, Vue.js, Angular, React e TypeScript. Iniciei minha carreira com foco em PHP, trabalhando com frameworks como Laravel e CodeIgniter no backend. Posteriormente, ampliei minha atuação para o frontend, desenvolvendo interfaces dinâmicas com Vue.js, Angular e React.
+                    Me chamo Lucas Mariano, Sou Desenvolvedor FullStack com sólida experiência em PHP, JavaScript, Vue.js, Angular, React e TypeScript. Iniciei minha carreira com foco em PHP, trabalhando com frameworks como Laravel e CodeIgniter no backend. Posteriormente, ampliei minha atuação para o frontend, desenvolvendo interfaces dinâmicas com Vue.js, Angular e React.
 
                     Tenho experiência em Ecommerce, contribuindo para plataformas escaláveis e personalizadas. No que se refere a bancos de dados, domino MySQL, SQL Server e PostgreSQL, aplicando boas práticas de modelagem e otimização de queries.
 
