@@ -49,6 +49,7 @@ h2 {
   color: #76ff03;
 }
 
+
 /* Hero Section */
 .hero-section {
   text-align: center;
@@ -180,7 +181,7 @@ h2 {
 
 .contact-section input,
 .contact-section textarea {
-  width: 100%;
+  width: 92%;
   padding: 15px;
   margin-bottom: 20px;
   border: none;
@@ -354,14 +355,7 @@ h2 {
     min-height: 180px;
   }
 
-  .navbar {
-    flex-direction: column;
-  }
 
-  .navbar ul {
-    flex-direction: column;
-    gap: 15px;
-  }
 
   .contact-section form {
     padding: 20px;
@@ -418,4 +412,20 @@ h2 {
         margin: 5px ; 
         max-width: 200px; 
     }
+}
+
+@media (max-width: 768px) {
+  .navbar ul {
+    display: none;
+  }
+
+  .menu-icon {
+    display: flex;
+  }
+
+  .navbar-menu.active {
+    display: flex;
+    width: 100%;
+
+  }
 }

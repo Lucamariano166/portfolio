@@ -11,11 +11,22 @@ const About = () => {
             >
                 <h2>Sobre Mim</h2>
                 <p>
-                    Me chamo Lucas Mariano, Sou Desenvolvedor FullStack com sólida experiência em PHP, JavaScript, Vue.js, Angular, React e TypeScript. Iniciei minha carreira com foco em PHP, trabalhando com frameworks como Laravel e CodeIgniter no backend. Posteriormente, ampliei minha atuação para o frontend, desenvolvendo interfaces dinâmicas com Vue.js, Angular e React.
+                    Olá! Meu nome é Lucas Mariano e sou um Desenvolvedor FullStack apaixonado por tecnologia e inovação. Com uma sólida experiência em PHP, JavaScript, Vue.js, Angular, React e TypeScript, tenho me dedicado a criar soluções eficientes e escaláveis.
+                    Minha Jornada
+                    Iniciei minha carreira focado em PHP, utilizando frameworks robustos como Laravel e CodeIgniter para desenvolver backends eficientes. Com o tempo, expandi minhas habilidades para o frontend, criando interfaces dinâmicas e responsivas com Vue.js, Angular e React.
+                    Experiência Profissional
+                    Tenho uma vasta experiência em Ecommerce, onde contribui para o desenvolvimento de plataformas escaláveis e personalizadas que atendem às necessidades específicas dos clientes. Minha expertise inclui:
 
-                    Tenho experiência em Ecommerce, contribuindo para plataformas escaláveis e personalizadas. No que se refere a bancos de dados, domino MySQL, SQL Server e PostgreSQL, aplicando boas práticas de modelagem e otimização de queries.
+                    Backend: PHP (Laravel, CodeIgniter)
+                    Frontend: JavaScript (Vue.js, Angular, React, TypeScript)
+                    Bancos de Dados: MySQL, SQL Server, PostgreSQL
+                    DevOps: Docker para criação de ambientes consistentes e automação de deployments
+                    Versionamento: Git/GitHub para organização e controle de versões
 
-                    Sou também familiarizado com Docker, utilizando-o para criar ambientes consistentes e automatizar deployments. Com forte foco em organização e versionamento com Git/GitHub, estou sempre em busca de novas tecnologias para melhorar meus projetos.
+                    Habilidades Adicionais
+                    Além das minhas competências técnicas, sou um profissional organizado e comprometido com a qualidade do código. Estou sempre em busca de novas tecnologias e metodologias para aprimorar meus projetos e entregar o melhor resultado possível.
+                    Entre em contato
+                    Vamos conversar e descobrir como posso contribuir para o seu próximo projeto!
                 </p>
             </motion.div>
         </section>

@@ -33,6 +33,7 @@ const Hero = () => {
                     Especializado em criar soluções completas e eficientes para suas necessidades de desenvolvimento web. <br />
                     Explore meus projetos e descubra como posso ajudar a transformar suas ideias em realidade.
                 </motion.p>
+                <br /><br /><br />
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -41,6 +42,7 @@ const Hero = () => {
                 >
                     <a href="#projects" className="btn btn-primary">Veja Meus Projetos</a>
                     <a href="#contact" className="btn btn-secondary">Entre em Contato</a>
+
                 </motion.div>
             </motion.div>
         </section>
