@@ -1,101 +1,144 @@
-import React from "react";
-import { motion } from "framer-motion";
-import Slider from "react-slick";
+import React, { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+const projects = [
+  {
+    type: "Projeto",
+    title: "Auto Veículos",
+    description:
+      "Sistema para cadastro de veículos vinculados ao usuário, com gerenciamento de manutenções e datas previstas.",
+    tech: ["Laravel", "PHP", "jQuery", "MySQL"],
+    github: "https://github.com/Lucamariano166/AutoVeiculos",
+    icon: "fas fa-car",
+  },
+  {
+    type: "Projeto",
+    title: "IBGE Select",
+    description:
+      "Selects dependentes para navegação por estado, município e informações detalhadas, consumindo a API oficial do IBGE.",
+    tech: ["React", "IBGE API", "JavaScript"],
+    github: "https://github.com/Lucamariano166/IBGE",
+    icon: "fas fa-map-pin",
+  },
+  {
+    type: "Experiência",
+    title: "E-commerce",
+    description:
+      "Desenvolvimento e manutenção de plataforma de e-commerce de grande porte, com novas funcionalidades e otimização de sistemas existentes.",
+    tech: ["PHP", "JavaScript", "MySQL"],
+    icon: "fas fa-shopping-cart",
+  },
+  {
+    // Note: No português, o correto é "Pavimentação"
+    type: "Experiência",
+    title: "Sistema de Pavimentação",
+    description:
+      "Sistema interno para a Goinfra de ordens de serviço de pavimentação, com integração ao Excel, mapas via Leaflet e gráficos com ECharts.",
+    tech: ["React", "Leaflet", "ECharts", "Laravel"],
+    icon: "fas fa-road",
+  },
+  {
+    type: "Experiência",
+    title: "Front-end Pantheon",
+    description:
+      "Atualização e migração de projetos Angular para versões mais recentes, garantindo compatibilidade e performance.",
+    tech: ["Angular", "TypeScript"],
+    icon: "fab fa-angular",
+  },
+  {
+    type: "Experiência",
+    title: "Front-end STE / DNIT",
+    description:
+      "Desenvolvimento de interfaces do sistema do DNIT com React e TypeScript, priorizando usabilidade e eficiência.",
+    tech: ["React", "TypeScript"],
+    icon: "fas fa-globe",
+  },
+];
 
-// Importar os estilos do slick-carousel
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-
-const Projects = () => {
-    const settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1
-                }
-            },
-            {
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            }
-        ]
-    };
-
-    const fadeInUp = {
-        initial: { opacity: 0, y: 20 },
-        animate: { opacity: 1, y: 0 },
-        transition: { duration: 0.8, ease: "easeOut" }
-    };
-
-    const items = [
-        {
-            type: "Projeto",
-            title: "Auto Veículos",
-            description: "Sistema para cadastro de veículos, vinculado ao usuário, com cadastro de manutenção e datas previstas. Desenvolvido com APIs construídas no Laravel e jQuery no front-end."
-        },
-        {
-            type: "Projeto",
-            title: "IBGE",
-            description: "Sistema com dois selects dependentes para mostrar cidade, município e informações sobre o município. Feito em ReactJS, consumindo API do IBGE."
-        },
-        {
-            type: "Experiência",
-            title: "E-commerce",
-            description: "Desenvolvimento e manutenção de soluções para um e-commerce de grande porte. Envolvem novas funcionalidades e otimização de sistemas existentes."
-        },
-        {
-            type: "Experiência",
-            title: "Sistema de Pavimentação",
-            description: "Criação de um sistema interno para a Goinfra, focado na criação de ordens de serviço de pavimentação. Integração com Microsoft Excel e gráficos interativos com Leaflet e ECharts."
-        },
-        {
-            type: "Experiência",
-            title: "Desenvolvedor Front-end Pantheon",
-            description: "Atualizei e melhorei projetos existentes usando Angular. Migrei arquivos antigos para versões mais recentes para garantir compatibilidade e melhor desempenho."
-        },
-        {
-            type: "Experiência",
-            title: "Desenvolvedor Front-end STE",
-            description: "Desenvolvimento do sistema do DNIT usando React e TypeScript, criando interfaces de usuário eficientes e fáceis de usar."
-        }
-    ];
-
-    return (
-        <section id="projects" className="projects-experiences-section">
-            <motion.h2
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1 }}
-            >
-                Projetos e Experiências
-            </motion.h2>
-            <Slider {...settings}>
-                {items.map((item, index) => (
-                    <motion.div
-                        key={index}
-                        className="item-card"
-                        variants={fadeInUp}
-                        initial="initial"
-                        animate="animate"
-                        transition={{ delay: index * 0.1 }}
-                    >
-                        <h4>{item.type}: {item.title}</h4>
-                        <p>{item.description}</p>
-                    </motion.div>
-                ))}
-            </Slider>
-        </section>
-    );
+const typeColor = {
+  Projeto: "from-indigo-500/20 to-indigo-500/10 border-indigo-500/30 text-indigo-300",
+  Experiencia: "from-cyan-500/20 to-cyan-500/10 border-cyan-500/30 text-cyan-300",
 };
 
-export default Projects;
+function FadeIn({ children, delay = 0 }) {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-60px" });
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 30 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.6, delay }}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+export default function Projects() {
+  return (
+    <section id="projects" className="section-padding bg-[#0d1117]">
+      <div className="max-w-6xl mx-auto">
+        <FadeIn>
+          <p className="text-indigo-400 text-sm font-medium tracking-widest uppercase mb-2">
+            Portfólio
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-16">
+            Projetos & <span className="gradient-text">Experiencias</span>
+          </h2>
+        </FadeIn>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {projects.map((project, i) => (
+            <FadeIn key={project.title} delay={i * 0.08}>
+              <div className="glass rounded-2xl p-6 flex flex-col gap-4 h-full hover:border-indigo-500/20 transition-all group">
+                <div className="flex items-start justify-between">
+                  <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-indigo-500/20 to-cyan-500/20 flex items-center justify-center group-hover:from-indigo-500/30 group-hover:to-cyan-500/30 transition-all">
+                    <i className={`${project.icon} text-indigo-400`} />
+                  </div>
+                  <span
+                    className={`text-xs font-medium px-2.5 py-1 rounded-full border bg-gradient-to-r ${typeColor[project.type]}`}
+                  >
+                    {project.type}
+                  </span>
+                </div>
+
+                <div className="flex-1">
+                  <h3 className="text-white font-semibold text-base mb-2">
+                    {project.title}
+                  </h3>
+                  <p className="text-slate-400 text-sm leading-relaxed">
+                    {project.description}
+                  </p>
+                </div>
+
+                <div className="flex flex-wrap gap-1.5">
+                  {project.tech.map((t) => (
+                    <span
+                      key={t}
+                      className="text-xs px-2 py-0.5 rounded bg-white/5 text-slate-400 border border-white/5"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+
+                {project.github && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-xs text-slate-400 hover:text-indigo-400 transition-colors mt-auto"
+                  >
+                    <i className="fab fa-github" />
+                    Ver no GitHub
+                    <i className="fas fa-arrow-right text-[10px]" />
+                  </a>
+                )}
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
